@@ -2,6 +2,7 @@
 const debounce = require('lodash.debounce');
 const chokidar = require('chokidar');
 const prog = require('caporal');
+const chalk = require('chalk');
 const fs = require('fs');
 const { spawn } = require('child_process');
 
@@ -19,10 +20,10 @@ prog
     let pid;
     const start = debounce(() => {
       if (pid) {
-        console.log('------- Ending Process -------');
+        console.log(chalk.red('------- Ending Process -------'));
         pid.kill();
       }
-      console.log('------- Starting Process -------');
+      console.log(chalk.green('------- Starting Process -------'));
       pid = spawn('node', [name], { stdio: 'inherit' });
     }, 100);
 
