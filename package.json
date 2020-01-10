@@ -1,0 +1,23 @@
+{
+  "name": "projectRunner",
+  "version": "1.0.0",
+  "description": "a tool that mimics the nodemon functionality so it can continuously watch a file and reload on changes to track them in real time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stelthdroid8/projectRunner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "watchit": "index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/stelthdroid8/projectRunner/issues"
+  },
+  "homepage": "https://github.com/stelthdroid8/projectRunner#readme"
+}
