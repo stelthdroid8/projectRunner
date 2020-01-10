@@ -14,21 +14,26 @@ prog
 
     try {
       await fs.promises.access(name);
-    } catch (error) {
+    } catch (err) {
       throw new Error(`Could not find the file: ${name}`);
     }
     let pid;
-    const start = debounce(() => {
+    const start = debounce(event => {
       if (pid) {
         console.log(chalk.red('------- Ending Process -------'));
         pid.kill();
       }
       console.log(chalk.green('------- Starting Process -------'));
+      console.log(event);
       pid = spawn('node', [name], { stdio: 'inherit' });
     }, 100);
 
     chokidar
-      .watch('.')
+      .watch('.', {
+        ignored: '/*.git/',
+        ignored: '/*.git/logs/',
+        ignored: 'node_modules'
+      })
       .on('add', start)
       .on('change', start)
       .on('unlink', start);
