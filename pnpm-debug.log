@@ -1,0 +1,15 @@
+{
+  "0 error pnpm": {
+    "message": {
+      "errno": -2,
+      "code": "ENOENT",
+      "syscall": "mkdir"
+    },
+    "err": {
+      "name": "Error",
+      "message": "ENOENT: no such file or directory, mkdir",
+      "code": "ENOENT",
+      "stack": "Error: ENOENT: no such file or directory, mkdir"
+    }
+  }
+}
