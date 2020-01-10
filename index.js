@@ -24,15 +24,14 @@ prog
         pid.kill();
       }
       console.log(chalk.green('------- Starting Process -------'));
-      console.log(event);
+      //   console.log(event);
       pid = spawn('node', [name], { stdio: 'inherit' });
+      //   console.log(pid);
     }, 100);
 
     chokidar
       .watch('.', {
-        ignored: '/*.git/',
-        ignored: '/*.git/logs/',
-        ignored: 'node_modules'
+        ignored: /.git.|node_modules/
       })
       .on('add', start)
       .on('change', start)
